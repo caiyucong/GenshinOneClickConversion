@@ -37,3 +37,13 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
     implementation 'com.github.getActivity:XXPermissions:13.5'
 }
+
+signingConfigs {
+    release {
+        #网路地址存在;否则使用Git@OSC的keystore
+        storeFile file("http://zql.org/zouqilin/gradle_keystore/blob/master/git-gradle-key.keystore")
+        storePassword RELEASE_STORE_PASSWORD
+        keyAlias RELEASE_KEY_ALIAS
+        keyPassword RELEASE_KEY_PASSWORD
+    }
+}
